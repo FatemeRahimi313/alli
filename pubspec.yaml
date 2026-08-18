@@ -1,0 +1,69 @@
+name: cheleban
+description: اپلیکیشن چله‌بان - پیگیری ۴۰ شب عبادت + آگاهی موقعیتی هوایی (Production Ready)
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+  flutter: '>=3.22.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Local Storage & Security
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.3.2
+  path_provider: ^2.1.4
+  encrypt: ^5.0.3
+  crypto: ^3.0.5
+
+  # Authentication
+  local_auth: ^2.3.0
+
+  # Networking
+  http: ^1.2.2
+  connectivity_plus: ^6.0.5
+
+  # Notifications
+  flutter_local_notifications: ^17.2.3
+  timezone: ^0.9.4
+  flutter_timezone: ^3.0.1
+
+  # UI & Utils
+  shamsi_date: ^1.0.4
+  intl: any
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  permission_handler: ^11.3.1
+  package_info_plus: ^8.0.2
+  url_launcher: ^6.3.0
+
+  # Maps (light)
+  latlong2: ^0.9.1
+  uuid: ^4.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.12
+  riverpod_generator: ^2.4.0
+  mockito: ^5.4.4
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+    - assets/audio/
+    - assets/icons/
