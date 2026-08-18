@@ -1,0 +1,7 @@
+<!-- Add these keys to your Info.plist -->
+<key>NSFaceIDUsageDescription</key>
+<string>برای باز کردن امن اپلیکیشن چله‌بان از Face ID استفاده می‌شود.</string>
+<key>UIBackgroundModes</key>
+<array>
+  <string>fetch</string>
+</array>
