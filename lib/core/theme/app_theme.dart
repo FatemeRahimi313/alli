@@ -10,19 +10,22 @@ class AppColors {
   static const Color militaryGold = Color(0xFFC9A227);
   static const Color militaryGray = Color(0xFF1A221A);
   static const Color militaryLightGray = Color(0xFF2A322A);
+
   static const Color alertRed = Color(0xFFB33A3A);
   static const Color alertYellow = Color(0xFFB39B3A);
   static const Color alertGreen = Color(0xFF3A8B5A);
-  static const Color textPrimary = Color(0xFFFFFFFF);
+
+  static const Color textPrimary = Colors.white;
   static const Color textSecondary = Color(0xFFB0B8B0);
   static const Color textMuted = Color(0xFF707870);
+
   static const Color surface = Color(0xFF121812);
   static const Color card = Color(0xFF1A221A);
   static const Color divider = Color(0xFF2A322A);
 
-  // Light theme variants
+  // Light theme
   static const Color lightBackground = Color(0xFFF5F7F5);
-  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightSurface = Colors.white;
   static const Color lightTextPrimary = Color(0xFF1A221A);
   static const Color lightTextSecondary = Color(0xFF4A5A4A);
 }
@@ -47,7 +50,10 @@ class AppRadius {
 class AppTheme {
   static ThemeData get dark {
     final base = ThemeData.dark(useMaterial3: true);
-    final textTheme = GoogleFonts.vazirmatnTextTheme(base.textTheme).apply(
+
+    final textTheme = GoogleFonts.vazirmatnTextTheme(
+      base.textTheme,
+    ).apply(
       bodyColor: AppColors.textPrimary,
       displayColor: AppColors.textPrimary,
     );
@@ -55,6 +61,7 @@ class AppTheme {
     return base.copyWith(
       scaffoldBackgroundColor: AppColors.militaryBlack,
       primaryColor: AppColors.militaryGreen,
+
       colorScheme: const ColorScheme.dark(
         primary: AppColors.militaryGreen,
         secondary: AppColors.militaryGold,
@@ -65,6 +72,7 @@ class AppTheme {
         onSurface: AppColors.textPrimary,
         onError: Colors.white,
       ),
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.militaryBlack,
         elevation: 0,
@@ -75,74 +83,109 @@ class AppTheme {
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
-        iconTheme: const IconThemeData(color: AppColors.militaryGreen),
+        iconTheme: const IconThemeData(
+          color: AppColors.militaryGreen,
+        ),
       ),
-      cardTheme: CardTheme(
+
+      // Flutter 3.47+
+      cardTheme: CardThemeData(
         color: AppColors.card,
         elevation: 0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadius.lg),
         ),
       ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.militaryDarkGreen,
           foregroundColor: Colors.white,
           minimumSize: const Size(64, 52),
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 14,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),
-          textStyle: textTheme.labelLarge?.copyWith(fontWeight: FontWeight.w600),
+          textStyle: textTheme.labelLarge?.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
+
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.militaryGreen,
-          side: const BorderSide(color: AppColors.militaryGreen, width: 1.5),
+          side: const BorderSide(
+            color: AppColors.militaryGreen,
+            width: 1.5,
+          ),
           minimumSize: const Size(64, 52),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppRadius.md),
           ),
         ),
       ),
+
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.militaryGreen,
         ),
       ),
+
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.militaryGray,
+
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
           borderSide: BorderSide.none,
         ),
+
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
-          borderSide: const BorderSide(color: AppColors.divider),
+          borderSide: const BorderSide(
+            color: AppColors.divider,
+          ),
         ),
+
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
-          borderSide: const BorderSide(color: AppColors.militaryGreen, width: 2),
+          borderSide: const BorderSide(
+            color: AppColors.militaryGreen,
+            width: 2,
+          ),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+
+      bottomNavigationBarTheme:
+          const BottomNavigationBarThemeData(
         backgroundColor: AppColors.militaryBlack,
         selectedItemColor: AppColors.militaryGreen,
         unselectedItemColor: AppColors.textMuted,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
+
       dividerTheme: const DividerThemeData(
         color: AppColors.divider,
         thickness: 1,
       ),
+
       textTheme: textTheme,
+
       snackBarTheme: SnackBarThemeData(
         backgroundColor: AppColors.militaryDarkGreen,
-        contentTextStyle: textTheme.bodyMedium?.copyWith(color: Colors.white),
+        contentTextStyle: textTheme.bodyMedium?.copyWith(
+          color: Colors.white,
+        ),
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadius.md),
@@ -153,7 +196,10 @@ class AppTheme {
 
   static ThemeData get light {
     final base = ThemeData.light(useMaterial3: true);
-    final textTheme = GoogleFonts.vazirmatnTextTheme(base.textTheme).apply(
+
+    final textTheme = GoogleFonts.vazirmatnTextTheme(
+      base.textTheme,
+    ).apply(
       bodyColor: AppColors.lightTextPrimary,
       displayColor: AppColors.lightTextPrimary,
     );
@@ -161,6 +207,7 @@ class AppTheme {
     return base.copyWith(
       scaffoldBackgroundColor: AppColors.lightBackground,
       primaryColor: AppColors.militaryGreen,
+
       colorScheme: const ColorScheme.light(
         primary: AppColors.militaryGreen,
         secondary: AppColors.militaryGold,
@@ -171,6 +218,7 @@ class AppTheme {
         onSurface: AppColors.lightTextPrimary,
         onError: Colors.white,
       ),
+
       appBarTheme: AppBarTheme(
         backgroundColor: AppColors.lightSurface,
         elevation: 0,
@@ -181,15 +229,20 @@ class AppTheme {
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),
-        iconTheme: const IconThemeData(color: AppColors.militaryGreen),
+        iconTheme: const IconThemeData(
+          color: AppColors.militaryGreen,
+        ),
       ),
-      cardTheme: CardTheme(
+
+      // Flutter 3.47+
+      cardTheme: CardThemeData(
         color: AppColors.lightSurface,
         elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadius.lg),
         ),
       ),
+
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.militaryGreen,
@@ -200,8 +253,11 @@ class AppTheme {
           ),
         ),
       ),
+
       textTheme: textTheme,
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+
+      bottomNavigationBarTheme:
+          const BottomNavigationBarThemeData(
         backgroundColor: AppColors.lightSurface,
         selectedItemColor: AppColors.militaryGreen,
         unselectedItemColor: AppColors.lightTextSecondary,
